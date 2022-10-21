@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de tarefas</title>
+    <link rel="stylesheet" href="todo.css" />
+    <body>
+        <center>
+            <h1 id="text"> ☲ lista de tarefas ☲ </h1>
+    </center>
+    <br>
+    <br>
+        <center>
+                <div>
+                 
+                    <center>
+                        <br>
+                        <img src="totorinho.png" width="110" height="70"/>
+                    <h2 id="text">⇝ organize suas tarefas diárias! ⇜</h2>
+                    <input id="texto" placeholder="✎...digite sua tarefa aqui.">
+                    <button onclick="adicionar()" >
+                        ✔
+                    </button>   
+                    <br>
+                    <br>
+        
+                </div>
+                <div id="tarefas" >
+                </center>
+        </div>
+    </center>
+    <br>
+    <br>
+    <br>
+    <center>
+        <h3>Feito por: Lucas Marques e Maria Laura - Turma 171</h3>
+    </center>
+    </body>
+    <script>
+        function adicionar()
+        {
+            
+            var conteudo = document.getElementById('texto').value;
+          
+                var novoElemento = document.createTextNode(conteudo);
+                var divNova = document.createElement('p');
+                var check = document.createElement('input');
+                check.setAttribute("type", "checkbox");
+                {
+                var botao = document.createElement('button');
+                botao.innerHTML = "✘";
+                botao.addEventListener("click",
+                function(){
+                    divNova.remove();
+                })
+    
+                divNova.appendChild(check);
+    
+                divNova.appendChild(novoElemento);
+                divNova.appendChild(botao);
+                document.getElementById('tarefas').appendChild(divNova);
+                document.getElementById('texto').value = "";
+    
+            }
+        } 
+    
+    </script>
+    </head>
+    
+    </html>
